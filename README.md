@@ -5,5 +5,16 @@
 ![screenshot from 2018-05-29 22-40-26](https://user-images.githubusercontent.com/35591154/40664108-2610fce4-6395-11e8-9da5-16ff82f9abf5.png)
 
 #### After the conv layer and the pooling layer are repeated twice, fully connected connection layer is used three times.
+----
 
+## Process
+- Load The Data
+- Dataset Summary & Exploratory Visualization
+- Preprocess Data
+- Design LeNet-5
+- Train the model and validate & test it **(Our goal is to achieve validation accuracy of over 93%)**
+- Test a Model on New Images
+
+----
+## Configuration
 
