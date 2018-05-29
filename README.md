@@ -63,7 +63,7 @@ In addition, the results and descriptions of each process have been added to con
 
 - ### Writeup.md
 
-It is a file that describes the important process in detail
+describes the important process in detail
 
 - ### Traffic_Sign_Classifier.html
 
