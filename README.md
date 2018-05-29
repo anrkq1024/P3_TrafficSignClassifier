@@ -8,7 +8,10 @@
 ----
 
 ## Process
-- Load The Data
+- ### Load The Data
+
+load data
+
 - Dataset Summary & Exploratory Visualization
 - Preprocess Data
 - Design LeNet-5
