@@ -18,7 +18,7 @@ The picture in the input file has RGB color and is 32 * 32 pixels in width and h
 
 The class id of the German signs and corresponding meanings.
 
-![screenshot from 2018-05-30 00-09-31](https://user-images.githubusercontent.com/35591154/40668137-b48687d8-639e-11e8-9ccc-3ff28a442ad7.png)
+![screenshot from 2018-05-30 10-36-56](https://user-images.githubusercontent.com/35591154/40694189-5cca8c62-63f6-11e8-9b77-acec8907705a.png)
 
 ----
 ## Visualize Data
