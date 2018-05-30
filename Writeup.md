@@ -71,10 +71,12 @@ This conversion also makes images that are somewhat distinguishable in RGB more 
 
 Normalize all data. Divide each data by size, subtract the mean, and divide by the standard deviation.
 
+----
 ## Shuffle the training data
 
 The model should not be affected by the order of the data to be learned. Therefore, the data to be learned must be randomly mixed.
 
+----
 ## Model Architecture
 
 Original structure is like this.
@@ -84,15 +86,18 @@ Original structure is like this.
 I changed the depth of the layer more deeply and applied a dropout with a 75% probability to prevent overfitting.
 I had used average pooling instead of max pooling in the pooling process,but the result of the max pooling was better. So I use max pooling. 
 
+----
 ## Optimaze loss function of difference between logits(pridected classes) and actural classes(labels in input data)
 
-Test data is as large as 35,000 data. Therefore, it is more efficient to optimize, or minimize , the loss by applying the gradient descent to randomly extracted data from the whole rather than to the whole data.
+Test data are as large as 35,000 data. Therefore, it is more efficient to optimize, or minimize , the loss by applying the gradient descent to randomly extracted data from the whole rather than to the whole data.
 Thus, I use a stochastic gradient descent algorithm **AdamOptimizer** instead of using the basic gradient descent algorithm.
 
+----
 ## Model evaluation
 
 To evaluate the outcome of learning, compare the predicted and actual values. And see how well the predictions are in graph.
 
+----
 ## Train the model and than validate&test it
 
 It repeats learning as much as epoch. Then calculate the accuracy of the training & validation & test.
@@ -103,4 +108,30 @@ The results are as follows. The target of the validation accuracy is more than 9
 ![screenshot from 2018-05-30 11-57-05](https://user-images.githubusercontent.com/35591154/40696626-8be00904-6401-11e8-8ebc-756050b4ee36.png)
 
 ![screenshot from 2018-05-29 23-34-37](https://user-images.githubusercontent.com/35591154/40696630-8e7d80b0-6401-11e8-91a0-367f88200ce6.png)
+
+----
+## Test a Model on New Images
+
+
+![screenshot from 2018-05-29 23-35-29](https://user-images.githubusercontent.com/35591154/40699472-78dd4b06-640f-11e8-929b-831de2c3f4a5.png)
+
+I downloaded six German traffic signs on the Internet to verify that the models I had learned actually could classify new traffic signs as well. And I converted the images to gray color and normalize them in the same way as above.
+
+Then I performed a classification of this new data on the learned models that I had already saved in save_train.ckpt. The result was that all the models lassified correctly.
+
+![screenshot from 2018-05-30 13-44-11](https://user-images.githubusercontent.com/35591154/40699645-80c788a8-6410-11e8-948d-0372f991833e.png)
+
+----
+## Output Top 5 Softmax Probabilities For Each Image Found on the Web
+
+For each of the new images, print out the model's softmax probabilities to show the certainty of the model's predictions. Through this process, I can see the five most probable classes that the new image has been identified in the model.
+
+![screenshot from 2018-05-30 13-50-25](https://user-images.githubusercontent.com/35591154/40699782-6aabb7fa-6411-11e8-81f5-090d8ca01546.png)
+
+new_images_labels = np.array([17, 31, 26, 3, 34, 23])
+
+![screenshot from 2018-05-30 13-50-34](https://user-images.githubusercontent.com/35591154/40699784-6b9f1058-6411-11e8-9c66-eda5313f6e01.png)
+
+The predicted value logits that pass through the LeNet-5 structure are transformed into probability through the sofrmax function. That is, they are classified into the class having the highest probability.
+
 
