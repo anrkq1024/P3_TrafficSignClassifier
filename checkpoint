@@ -1,0 +1,2 @@
+model_checkpoint_path: "save_train.ckpt"
+all_model_checkpoint_paths: "save_train.ckpt"
