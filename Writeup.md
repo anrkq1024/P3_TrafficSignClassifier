@@ -34,7 +34,7 @@ Below the picture are the number of each class number and the total number of im
 
 convert RGB images to GRAY images
 
-There are very dark images. 
+As you can see when visualizing your data ,there are very dark images. 
 
 Class 19
 
@@ -54,7 +54,17 @@ Class 20
 
 ![screenshot from 2018-05-30 00-29-19](https://user-images.githubusercontent.com/35591154/40669580-355b0f66-63a2-11e8-9541-99c8ce5367cd.png)
 
-The outline of the traffic sign is much detectable than that of the RGB color. Thus, the entire data is converted to gray color.
+The outline of the traffic sign is much detectable than that of the RGB color. Thus, This kind of image is better to convert colors. If so, look for images that are somewhat distinguished by RGB colors.
+
+
+![screenshot from 2018-05-30 11-10-26](https://user-images.githubusercontent.com/35591154/40695283-8ddad654-63fb-11e8-9c6a-b034a628e0cd.png)
+![screenshot from 2018-05-30 11-10-36](https://user-images.githubusercontent.com/35591154/40695285-8f3d4eaa-63fb-11e8-988f-fa19eaedc743.png)
+
+
+![screenshot from 2018-05-30 11-18-18](https://user-images.githubusercontent.com/35591154/40695416-23868b80-63fc-11e8-94ea-6b0e9bcc55ad.png)
+![screenshot from 2018-05-30 11-18-27](https://user-images.githubusercontent.com/35591154/40695418-24cd8516-63fc-11e8-8289-63778e624b18.png)
+
+This conversion also makes images that are somewhat distinguishable in RGB more vivid. So Applying this process to the whole data will improve learning accuracy.
 
 ----
 ## Normalization the data
@@ -67,4 +77,30 @@ The model should not be affected by the order of the data to be learned. Therefo
 
 ## Model Architecture
 
+Original structure is like this.
+
+![screenshot from 2018-05-29 22-40-26](https://user-images.githubusercontent.com/35591154/40694719-c6d09bae-63f8-11e8-8009-a2f4e24edcb0.png)
+
+I changed the depth of the layer more deeply and applied a dropout with a 75% probability to prevent overfitting.
+I had used average pooling instead of max pooling in the pooling process,but the result of the max pooling was better. So I use max pooling. 
+
+## Optimaze loss function of difference between logits(pridected classes) and actural classes(labels in input data)
+
+Test data is as large as 35,000 data. Therefore, it is more efficient to optimize, or minimize , the loss by applying the gradient descent to randomly extracted data from the whole rather than to the whole data.
+Thus, I use a stochastic gradient descent algorithm **AdamOptimizer** instead of using the basic gradient descent algorithm.
+
+## Model evaluation
+
+To evaluate the outcome of learning, compare the predicted and actual values. And see how well the predictions are in graph.
+
+## Train the model and than validate&test it
+
+It repeats learning as much as epoch. Then calculate the accuracy of the training & validation & test.
+Then save the learned model to a file. This ensures that I will not have to re-learn the model unnecessarily when testing for new images later. 
+
+The results are as follows. The target of the validation accuracy is more than 93%, about 95%. The test accuracy is about 93.5%.
+
+![screenshot from 2018-05-30 11-57-05](https://user-images.githubusercontent.com/35591154/40696626-8be00904-6401-11e8-8ebc-756050b4ee36.png)
+
+![screenshot from 2018-05-29 23-34-37](https://user-images.githubusercontent.com/35591154/40696630-8e7d80b0-6401-11e8-91a0-367f88200ce6.png)
 
