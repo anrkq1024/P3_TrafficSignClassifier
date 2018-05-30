@@ -40,18 +40,11 @@ Then compares the calculated logit with the actual label and optimizes it to min
 
 - ### Train the model and validate & test it **(Our goal is to achieve validation accuracy of over 93%)**
 
-The model is trained by passing the input sign through a convolution neural network and minimizing the difference between the predicted value and the actual value. The result is below.
-
-![screenshot from 2018-05-29 23-34-37](https://user-images.githubusercontent.com/35591154/40666059-d243d686-6399-11e8-8fe6-0dd0b5b731d1.png)
-
+The model is trained by passing the input sign through a convolution neural network and minimizing the difference between the predicted value and the actual value.
 
 - ### Test a Model on New Images
 
 Apply the six German traffic signs received from the Internet to the learned models to ensure that the learned models correctly distinguish traffic signs.
-
-![screenshot from 2018-05-29 23-35-29](https://user-images.githubusercontent.com/35591154/40666109-ef659a7e-6399-11e8-86c8-f006646c8831.png)
-
-
 
 ----
 ## Configuration
