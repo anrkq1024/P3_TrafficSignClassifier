@@ -68,4 +68,8 @@ contains new images obtained from internet
 
 - ### signnames.csv
 
-contains what the German traffic sign label means.
+contains what the German traffic sign label means
+
+- ### save_train.ckpt
+
+contains parameter values of the trained model
