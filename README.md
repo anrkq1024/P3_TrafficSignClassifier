@@ -73,3 +73,7 @@ contains what the German traffic sign label means
 - ### save_train.ckpt
 
 contains parameter values of the trained model
+
+- Reference : https://github.com/netaz/carnd_traffic_sign_classifier.git
+  
+  I referenced this link to visualize the data.
